@@ -13,6 +13,9 @@ namespace ATM.BLL.Implementation
     {
         private readonly IAdminService _adminService;
         private static AccountType _accountType;
+        private static int _cashDenomination;
+        private static decimal ChoiceAmount;
+
         private readonly IAuthService authService = new AuthService();
         private readonly IContinueOrEndProcess continueOrEndProcess = new ContinueOrEndProcess();
         private readonly ICreateAccount createAccount = new CreateAccount();
@@ -21,11 +24,9 @@ namespace ATM.BLL.Implementation
         public static int _days = 0;
         private const int Aday = 1;
         private const int OneWeek = 7;
-        private static int _cashDenomination;
-        private static decimal Amount { get; set; }
-        private static decimal ChoiceAmount;
 
         private static decimal EnteredAmount { get; set; }
+        private static decimal Amount { get; set; }
 
         public AtmService(IAdminService adminService) => _adminService = adminService;
         public AtmService() { }

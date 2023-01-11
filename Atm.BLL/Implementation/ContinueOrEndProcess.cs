@@ -2,6 +2,7 @@
 using ATM.BLL.Interfaces;
 using Utility;
 using System;
+using ATM.BLL.Utility;
 
 namespace ATM.UI
 {
@@ -32,7 +33,7 @@ namespace ATM.UI
                 EndProcess();
             }else if(answer.Trim().ToUpper() == "NO")
             {
-                
+                MainMethod.GetUserChoice();
             }
             else
             {

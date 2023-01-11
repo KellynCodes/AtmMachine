@@ -1,12 +1,13 @@
-﻿using ATM.BLL.Interfaces;
+﻿using System.Threading.Tasks;
+using ATM.BLL.Interfaces;
 using ATM.DATA.DataBase;
+using ATM.BLL.Utility;
 using ATM.DATA.Domain;
-using ATM.UI;
 using ATM.DATA.Enums;
-using System;
-using System.Threading.Tasks;
 using System.Linq;
 using Utility;
+using ATM.UI;
+using System;
 
 namespace ATM.BLL.Implementation
 {
@@ -99,10 +100,9 @@ namespace ATM.BLL.Implementation
                 const int ThreeSeconds = 3000;
                 var atm = GetAtmData.GetData();
                 message.Success($"Reloading {amount}...");
-                await Task.Delay(ThreeSeconds);
                 atm.AvailableCash += amount;
                 message.Alert($"New Balance :: {atm.AvailableCash}");
-                /*Program.GetUserChoice();*/
+                MainMethod.GetUserChoice();
             }
             else
             {
@@ -117,7 +117,7 @@ namespace ATM.BLL.Implementation
             {
                 Console.WriteLine($"{account.UserId} {account.UserName}");
             }
-            /* Program.Logout();*/
+            MainMethod.Logout();
         }
 
     }

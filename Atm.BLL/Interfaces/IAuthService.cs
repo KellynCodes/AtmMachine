@@ -10,7 +10,5 @@ namespace ATM.BLL.Interfaces
         Task ResetPin();
 
         Task LogOut();
-
-
     }
 }
