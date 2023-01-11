@@ -11,5 +11,6 @@ namespace ATM.BLL.Interfaces
 
         Task LogOut();
 
+
     }
 }
